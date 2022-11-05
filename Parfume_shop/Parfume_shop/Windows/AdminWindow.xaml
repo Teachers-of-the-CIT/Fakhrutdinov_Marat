@@ -1,0 +1,30 @@
+﻿<Window x:Class="Parfume_shop.Windows.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parfume_shop.Windows"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800" Background="#FFFFFF" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen" Icon="/Windows/logo.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="374*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Stretch" Fill ="#B3F4E9" VerticalAlignment="Stretch" Grid.Row="0"/>
+        <TextBlock TextWrapping="Wrap" Text="ДОБРО ПОЖАЛОВАТЬ, АДМИНИСТРАТОР!" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" TextAlignment="Left" VerticalAlignment="Center" Height="38" HorizontalAlignment="Center"/>
+        <DataGrid x:Name="Products" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" FontFamily="Times New Roman" FontWeight="Bold" CanUserReorderColumns="False" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер товара" Binding="{Binding Product_id}"/>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding Vendor_code}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Измерение" Binding="{Binding Unit}"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Скидка" Binding="{Binding MaxDiscount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Rectangle HorizontalAlignment="Stretch" Fill ="#B3F4E9" VerticalAlignment="Stretch" Grid.Row="3"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="10,0,0,0" VerticalAlignment="Center" Width="50" Source="/Windows/logo.png" RenderTransformOrigin="1.08,0.492"/>
+    </Grid>
+</Window>
